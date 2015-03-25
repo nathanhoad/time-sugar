@@ -2,10 +2,12 @@
 
 Some simple syntax for handling dates and times.
 
+
+## Usage
+
 `npm install time-sugar`
 
-
-## Examples
+Examples:
 
 ```javascript
 require('time-sugar');
@@ -32,6 +34,7 @@ require('time-sugar');
 
 
 // Dates
+var now = new Date();
 
 (1).day().fromNow()
 (2).weeks().fromNow()
