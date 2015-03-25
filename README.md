@@ -2,7 +2,12 @@
 
 Some simple syntax for handling dates and times.
 
-```
+`npm install time-sugar`
+
+
+## Examples
+
+```javascript
 require('time-sugar');
 
 
