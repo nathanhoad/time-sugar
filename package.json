@@ -1,0 +1,27 @@
+{
+  "name": "time-sugar",
+  "version": "1.0.0",
+  "description": "Some nice syntax for dealing with times",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/nathanhoad/time-sugar.git"
+  },
+  "keywords": [
+    "dates",
+    "times"
+  ],
+  "author": "Nathan Hoad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nathanhoad/time-sugar/issues"
+  },
+  "homepage": "https://github.com/nathanhoad/time-sugar",
+  "devDependencies": {
+    "mocha": "^2.2.1",
+    "should": "^5.2.0"
+  }
+}
