@@ -14,8 +14,8 @@ function compare (days) {
 describe('Number Helpers', function () {
     
     it('should help define times', function (done) {
-        T(1).minute().valueOf().should.equal(60);
-        T(5).minutes().valueOf().should.equal(5 * 60);
+        T(1).minute().valueOf().should.equal(60 * 1000);
+        T(5).minutes().valueOf().should.equal(5 * 60 * 1000);
         
         T(60).minutes().valueOf().should.equal(T(1).hour().valueOf());
         

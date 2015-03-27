@@ -17,8 +17,15 @@ N.prototype.toString = function () {
 
 // TIME
 
+N.prototype.seconds = function () {
+    return N(this.n * 1000);
+}
+
+N.prototype.second = N.prototype.seconds;
+
+
 N.prototype.minutes = function () {
-    return this.n * 60;
+    return N(this.seconds() * 60);
 };
 
 N.prototype.minute = N.prototype.minutes;
@@ -62,7 +69,7 @@ N.prototype.year = N.prototype.years;
 // DATE
 
 N.prototype.from = function (date) {
-    return new Date(date.getTime() + (this.n * 1000));
+    return new Date(date.getTime() + this.n);
 }
 
 N.prototype.fromNow = function () {
@@ -71,7 +78,7 @@ N.prototype.fromNow = function () {
 
 
 N.prototype.before = function (date) {
-    return new Date(date.getTime() - (this.n * 1000));
+    return new Date(date.getTime() - this.n);
 }
 
 N.prototype.beforeNow = function () {
