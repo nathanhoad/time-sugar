@@ -1,6 +1,6 @@
 {
   "name": "time-sugar",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Some nice syntax for dealing with times",
   "main": "index.js",
   "scripts": {

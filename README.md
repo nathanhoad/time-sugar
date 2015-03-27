@@ -18,19 +18,19 @@ var T = require('time-sugar');
 T(1).minute() == 60
 T(5).minutes() == 300
 
-T(60).minutes() == (1).hour()
+T(60).minutes() == T(1).hour()
 
-T(24).hours() == (1).day()
-T(48).hours() == (2).days()
+T(24).hours() == T(1).day()
+T(48).hours() == T(2).days()
 
-T(7).days() == (1).week()
-T(14).days() == (2).weeks()
+T(7).days() == T(1).week()
+T(14).days() == T(2).weeks()
 
-T(52).weeks() == (1).year()
+T(52).weeks() == T(1).year()
 
-T(3).months() == (0.25).years()
-T(6).months() == (0.5).years()
-T(12).months() == (1).year()
+T(3).months() == T(0.25).years()
+T(6).months() == T(0.5).years()
+T(12).months() == T(1).year()
 
 
 // Dates
