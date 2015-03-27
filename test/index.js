@@ -1,7 +1,7 @@
 var Should = require('should');
 
 
-var TimeMagic = require('..');
+var T = require('..');
 
 function compare (days) {
     var date = new Date();
@@ -14,21 +14,21 @@ function compare (days) {
 describe('Number Helpers', function () {
     
     it('should help define times', function (done) {
-        (1).minute().should.equal(60);
-        (5).minutes().should.equal(5 * 60);
+        T(1).minute().valueOf().should.equal(60);
+        T(5).minutes().valueOf().should.equal(5 * 60);
         
-        (60).minutes().should.equal((1).hour());
+        T(60).minutes().valueOf().should.equal(T(1).hour().valueOf());
         
-        (24).hours().should.equal((1).day());
-        (48).hours().should.equal((2).days());
+        T(24).hours().valueOf().should.equal(T(1).day().valueOf());
+        T(48).hours().valueOf().should.equal(T(2).days().valueOf());
         
-        (7).days().should.equal((1).week());
-        (14).days().should.equal((2).weeks());
+        T(7).days().valueOf().should.equal(T(1).week().valueOf());
+        T(14).days().valueOf().should.equal(T(2).weeks().valueOf());
         
-        (52).weeks().should.equal((1).year());
-        (3).months().should.equal((0.25).years());
-        (6).months().should.equal((0.5).years());
-        (12).months().should.equal((1).year());
+        T(52).weeks().valueOf().should.equal(T(1).year().valueOf());
+        T(3).months().valueOf().should.equal(T(0.25).years().valueOf());
+        T(6).months().valueOf().should.equal(T(0.5).years().valueOf());
+        T(12).months().valueOf().should.equal(T(1).year().valueOf());
         
         done();
     });
@@ -37,17 +37,17 @@ describe('Number Helpers', function () {
     it('should help define dates', function (done) {
         var now = new Date();
 
-        (1).day().fromNow().getDate().should.equal(compare(1));
-        (2).weeks().fromNow().getDate().should.equal(compare(14));
+        T(1).day().fromNow().getDate().should.equal(compare(1));
+        T(2).weeks().fromNow().getDate().should.equal(compare(14));
         
-        (1).day().beforeNow().getDate().should.equal(compare(-1));
-        (3).weeks().beforeNow().getDate().should.equal(compare(-21));
+        T(1).day().beforeNow().getDate().should.equal(compare(-1));
+        T(3).weeks().beforeNow().getDate().should.equal(compare(-21));
         
-        (1).day().from(now).getDate().should.equal(compare(1));
-        (2).weeks().from(now).getDate().should.equal(compare(14));
+        T(1).day().from(now).getDate().should.equal(compare(1));
+        T(2).weeks().from(now).getDate().should.equal(compare(14));
         
-        (1).day().before(now).getDate().should.equal(compare(-1));
-        (3).weeks().before(now).getDate().should.equal(compare(-21));
+        T(1).day().before(now).getDate().should.equal(compare(-1));
+        T(3).weeks().before(now).getDate().should.equal(compare(-21));
         
         done();
     });

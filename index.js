@@ -1,64 +1,84 @@
+var N = function (n) {
+    if (!(this instanceof N)) {
+        return new N(n);
+    }
+    
+    this.n = n;
+}
+
+N.prototype.valueOf = function () {
+    return this.n;
+}
+
+N.prototype.toString = function () {
+    return this.n.toString();
+}
+
+
 // TIME
 
-Number.prototype.minutes = function () {
-    return this * 60;
+N.prototype.minutes = function () {
+    return this.n * 60;
 };
 
-Number.prototype.minute = Number.prototype.minutes;
+N.prototype.minute = N.prototype.minutes;
 
 
-Number.prototype.hours = function () {
-    return this.minutes() * 60;
+N.prototype.hours = function () {
+    return N(this.minutes() * 60);
 };
 
-Number.prototype.hour = Number.prototype.hours;
+N.prototype.hour = N.prototype.hours;
 
 
-Number.prototype.days = function () {
-    return this.hours() * 24;
+N.prototype.days = function () {
+    return N(this.hours() * 24);
 };
 
-Number.prototype.day = Number.prototype.days;
+N.prototype.day = N.prototype.days;
 
 
-Number.prototype.weeks = function () {
-    return this.days() * 7;
+N.prototype.weeks = function () {
+    return N(this.days() * 7);
 };
 
-Number.prototype.week = Number.prototype.weeks;
+N.prototype.week = N.prototype.weeks;
 
 
-Number.prototype.months = function () {
-    return Math.round((this.weeks() * (52/12)) * 100) / 100.0;
+N.prototype.months = function () {
+    return N(Math.round((this.weeks() * (52/12)) * 100) / 100.0);
 }
 
-Number.prototype.month = Number.prototype.months;
+N.prototype.month = N.prototype.months;
 
 
-Number.prototype.years = function () {
-    return this.months() * 12;
+N.prototype.years = function () {
+    return N(this.months() * 12);
 }
 
-Number.prototype.year = Number.prototype.years;
+N.prototype.year = N.prototype.years;
 
 
 // DATE
 
-Number.prototype.from = function (date) {
-    return new Date(date.getTime() + (this * 1000));
+N.prototype.from = function (date) {
+    return new Date(date.getTime() + (this.n * 1000));
 }
 
-Number.prototype.fromNow = function () {
+N.prototype.fromNow = function () {
     return this.from(new Date());
 }
 
 
-Number.prototype.before = function (date) {
-    return new Date(date.getTime() - (this * 1000));
+N.prototype.before = function (date) {
+    return new Date(date.getTime() - (this.n * 1000));
 }
 
-Number.prototype.beforeNow = function () {
+N.prototype.beforeNow = function () {
     return this.before(new Date());
 }
 
-Number.prototype.ago = Number.prototype.beforeNow;
+N.prototype.ago = N.prototype.beforeNow;
+
+
+module.exports = N;
