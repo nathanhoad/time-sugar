@@ -78,7 +78,7 @@ N.prototype.fromNow = function () {
     return this.from(new Date());
 }
 
-N.prototype.afterNow = N.prototype.fromNow
+N.prototype.afterNow = N.prototype.fromNow;
 
 N.prototype.before = function (date) {
     return new Date(date.getTime() - this.n);
