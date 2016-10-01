@@ -1,5 +1,7 @@
 # Time Sugar
 
+[![CircleCI](https://circleci.com/gh/nathanhoad/time-sugar/tree/master.svg?style=svg)](https://circleci.com/gh/nathanhoad/time-sugar/tree/master)
+
 Some simple syntax for handling dates and times.
 
 
